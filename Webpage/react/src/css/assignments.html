@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css" media="screen" />
+</head>
+
+<body>
+	<div id="topNav">
+    <img id="logo" src="plogo.png">
+    <p id="stdtName">Casey</p>
+    <img id="help" src="help.png">
+    <img id="noti" src="noti.png">
+  </div>
+  <br>
+  
+  <div id="content">
+      <table id= "description">
+          <tr>
+              <td><strong>Title:</strong> Learning The Keys To Physical Delivery Skills</td>
+              <td><strong>15 Points</strong></td>
+              <td><strong>Due:</strong> Oct 18, 2016 - Oct 30, 2016</td>
+          </tr>
+          <tr>
+              <td colspan="3"><strong>Learning Objectives:</strong> To develop knowledge and skills related to the student's understanding of rehearsal techniques, and his/her abilities in the ensemble performance as well as the knowledge of music literature and conducting skills.</td>
+          </tr>
+          <tr>
+              <td colspan="3"><strong>Description:</strong> As you watch the video, quiz question will appear. You must answer all questions to submit the quiz.</td>
+          </tr>
+      </table>
+    <br>
+        <div class="dropdown">
+          <button onclick="myFunction()" class="greybtn" id="dropbtn">Question 1 of 5 ▼</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a id = "q1Choose" onclick="gotoFunction()" href="#q1">1. ✓Complete</a>
+              <a id = "q2Choose" onclick="gotoFunction()" href="#q2">2. ✓Complete</a>
+              <a id = "q3Choose" onclick="gotoFunction()" href="#q3">3. ✓Complete</a>
+              <a id = "q4Choose" onclick="gotoFunction()" href="#q4">4. ✓Complete</a>
+              <a id = "q4Choose" onclick="gotoFunction()" href="#q5">5. ✓Complete</a>
+            </div>
+        </div>
+        <p id="pts">Worth 1 point</p>
+    <br>
+  	<div id="mainPart">
+     <table id= "vandq">
+        <tr>
+          <td>
+                  <video controls>
+                      <source src="mov_bbb.mp4" type="video/mp4">
+                    </video>
+                </td>
+                <td>
+                  <p id="start">Select the play button to <br> begin your quiz.</p>
+                  <div id="q1all">
+                      <div class="topBar">
+                        <p>What is the best way to feel more physically comfortable when delivering a speech?</p>
+                      </div>
+                      <div id="choices">
+                        <p>Question 1[0:12]</p>
+                        <form>
+                              <input type="radio" name="q1" value="q1a1"> Take a course about self esteem<br>
+                  <input type="radio" name="q1" value="q1a2"> Learn mediation skills<br>
+                  <input type="radio" name="q1" value="q1a3"> Learn specific skills on what to do with your body<br>
+                              <input type="radio" name="q1" value="q1a4"> Take a course about ignoring the audience<br>
+                          </form>
+                      </div>
+                    </div>
+                    <div id="q2all">
+                      <div class="topBar">
+                        <p>Why is it important to have good posture?</p>
+                      </div>
+                      <div id="choices">
+                        <p>Question 2[1:21]</p>
+                        <form>
+                              <input type="radio" name="q2" value="q2a1"> More impressive looking<br>
+                  <input type="radio" name="q2" value="q2a2"> You avoid stomach cramping<br>
+                  <input type="radio" name="q2" value="q2a3"> Easier to see the back of the room<br>
+                              <input type="radio" name="q2" value="q2a4"> Keeps the body open for other<br>
+                          </form>
+                      </div>
+                    </div>
+                    <div id="q3all">
+                      <div class="topBar">
+                        <p>How does standing with your feet shoulder width apart help you have a better delivery?</p>
+                      </div>
+                      <div id="choices">
+                        <p>Question 3[1:45]</p>
+                        <form>
+                              <input type="radio" name="q3" value="q3a1"> Eliminate distracting movement<br>
+                              <input type="radio" name="q3" value="q3a2"> You avoid falling over<br>
+                              <input type="radio" name="q3" value="q3a3"> You can see the back of the room better<br>
+                              <input type="radio" name="q3" value="q3a4"> You can breathe better<br>
+                          </form>
+                      </div>
+                    </div>
+                    <div id="q4all">
+                      <div class="topBar">
+                        <p>Why are gestures an important delivery skill to learn?</p>
+                      </div>
+                      <div id="choices">
+                        <p>Question 4[2:48]</p>
+                        <form>
+                              <input type="radio" name="q4" value="q4a1"> Helps the audience from seeing how nervous you might be<br>
+                  <input type="radio" name="q4" value="q4a2"> Help communicate the message<br>
+                  <input type="radio" name="q4" value="q4a3"> Teaches you that fewer gestures make a better speech<br>
+                              <input type="radio" name="q4" value="q4a4"> Teaches you that more gestures make a better speech<br>
+                          </form>
+                      </div>
+                    </div>
+                    <div id="q5all">
+                      <div class="topBar">
+                        <p>What is the outcome of learning correct postures, body movement, and gestures?</p>
+                      </div>
+                      <div id="choices">
+                        <p>Question 5[3:38]</p>
+                        <form>
+                              <input type="radio" name="q5" value="q5a1"> Make you look like you have prepared for your speech<br>
+                  <input type="radio" name="q5" value="q5a2"> Make you look powerful<br>
+                  <input type="radio" name="q5" value="q5a3"> Helps you avoid stomach cramping<br>
+                              <input type="radio" name="q5" value="q5a4"> Makes you look and feel more comfortable<br>
+                          </form>
+                      </div>
+                    </div>
+                    <input id="subQ" class="bluebtn" type="button" value="Submit Quiz">
+                    <input id="resumeQ" class="bluebtn" type="button" value="Resume">
+                </td>
+                
+            </tr>
+    </table>
+  </div>
+  <div id="error" class="popup">
+    <span class="close">&times;</span>
+    <p id="errTitle">Error</p>
+    <p >Please answer all the questions before submitting your quiz.</p>
+  </div>
+
+  <div id="success"  class="popup">
+    <span class="close">&times;</span>
+    <p id="sucTitle">Success</p>
+    <p >Success! You've submitted your quiz.</p>
+  </div>
+
+  <div id="confirmbg">
+    <div id="confirm">
+      <div class="topBar">
+        <span class="close" id="closeCon"><strong>&times;</strong></span>
+        <p id="conTitle">Submit Quiz</p> 
+      </div>
+      <br>
+      <p class="popText">Are you sure you're ready to submit? You won't be able to change your answers.</p>
+      <br>
+      <hr>
+      <button id="subQCon" class="bluebtn">Submit Quiz</button>
+      <button id="review" class="greybtn">Review</button>
+    </div>
+  </div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

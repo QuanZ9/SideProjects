@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" media="screen" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['correctOrNot', 'percentage'],
+          ['correct',     0.8],
+          ['incorrect',      0.2]
+        ]);
+
+        var options = {
+          pieHole: 0.8,
+          legend: 'none',
+          pieSliceText: 'none',
+          pieStartAngle: 180,
+          width: 150,
+          height: 150,
+          chartArea:{left: 0, top: 0, width: "100%", height: "100%"},
+          colors:["#0d6b94","#ffac00"]
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart'));
+        chart.draw(data, options);
+      }
+      
+    </script>
+  </head>
+  <body>
+  <div id="topNav">
+    <img id="logo" src="plogo.png">
+    <p id="stdtName">Casey</p>
+    <img id="help" src="help.png">
+    <img id="noti" src="noti.png">
+  </div>
+  <br>
+  
+  <div id="content">
+    <div id="topScore">
+d      <div id="chartText">
+      	<p id='scorePercent'>80%</p>
+      	<p id="yqs">Your quiz score!</p>
+        <p id="scoreP" class="scoreText"> Score 80%</p>
+        <p id="scoreIn" class="scoreText"> 2 Incorrect - </p>
+        <p id="scoreC" class="scoreText"> 3 Correct / </p>
+        <p id="scoreAll"class="scoreText"> 5 Questions / </p>  
+
+      </div>
+    </div>
+    <table id="vandr">
+      <tr>
+        <td>
+          <video controls>
+              <source src="mov_bbb.mp4" type="video/mp4">
+          </video>
+        </td>
+        <td>
+          <!--List Container-->
+    <ul class="dropdown-list-container">
+  <!--First List-->
+      <li class="dropdown-list">
+    <!--List Title-->
+        <a href="#" dropdown-prop="title">Question 1 [0:12]<i class="dropdown-icon"></i><i class="qCI"></i></a> 
+      <!--List Items-->
+        <ul class="dropdown-list-items">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </li>
+  
+  <!--Second List-->
+  <li class="dropdown-list">
+    <!--List Title-->
+    <a href="#" dropdown-prop="title">Question 2 [1:21]<i class="dropdown-icon"></i><i class="qCI"></i></a>
+    <!--List Items-->
+    <ul class="dropdown-list-items">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </li>
+  
+  <!--Third List-->
+  <li class="dropdown-list">
+    <!--List Title-->
+    <a href="#" dropdown-prop="title">Question 3 [1:45]<i class="dropdown-icon"></i><i class="qCI"></i></a>
+    <!--List Items-->
+    <ul class="dropdown-list-items">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </li>
+  <!--Fourth List-->
+  <li class="dropdown-list">
+    <!--List Title-->
+    <a href="#" dropdown-prop="title">Question 4 [2:48]<i class="dropdown-icon"></i><i class="qCI"></i></a>
+    <!--List Items-->
+    <ul class="dropdown-list-items">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </li>
+  <!--Fifth List-->
+  <li class="dropdown-list">
+    <!--List Title-->
+    <a href="#" dropdown-prop="title">Question 5 [3:38]<i class="dropdown-icon"></i><i class="qCI"></i></a>
+    <!--List Items-->
+    <ul class="dropdown-list-items">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </li>
+</ul>
+          <br>
+          <button id="backToAssn" class="bluebtn">Back to Assignments</button>  
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script src="scripts.js"></script>
+  </body>
+</html>
