@@ -22,13 +22,13 @@ class ResultItem extends Component{
     }
 
 	showOptions(optionId){
-		if (this.props.data.correctAnswer === optionId){
+		if (this.props.data.correctAnswer == optionId){
 			return (
 				<p className="greenMarker"> ✓ {this.props.data.answers[optionId].text}</p>
 			);
 		}
 		else{
-			if (this.props.mainState.Q[this.props.id] === optionId){
+			if (this.props.mainState.Q[this.props.id] == optionId){
 				return (
 					<p className="redMarker"> {this.props.data.answers[optionId].text}</p>		
 				)

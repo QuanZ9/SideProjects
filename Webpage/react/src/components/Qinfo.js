@@ -8,15 +8,14 @@ function Qinfo(props){
     }
     
     function gotoFunction(questionId) {
+		props.setter(questionId);
     	var dropdowns = document.getElementsByClassName("dropdown-content");
-	    var i;
-		for (i = 0; i < dropdowns.length; i++) {
+		for (var i = 0; i < dropdowns.length; i++) {
 			var openDropdown = dropdowns[i];
 			if (openDropdown.classList.contains('show')) {
 				openDropdown.classList.remove('show');
 			}
 		}
-		props.setter(questionId);
 	}
     
 	function getText(status){
@@ -24,7 +23,7 @@ function Qinfo(props){
 			return "incomplete";
 		}
 		else{
-			return (<div style={{display:"inline"}}><span className='greenMarker'>✓ </span> "Complete"</div>);
+			return (<div style={{display:"inline"}}><span className='greenMarker'>✓ </span> Complete</div>);
 		}
 	}
 

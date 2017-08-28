@@ -35,7 +35,8 @@ Quiz.propTypes = {
 	question: React.PropTypes.string.isRequired,
 	questionId: React.PropTypes.number.isRequired,
 	onAnswerSelected: React.PropTypes.func.isRequired,
-	title: React.PropTypes.string.isRequired
+	title: React.PropTypes.string.isRequired,
+	checkOption: React.PropTypes.number.isRequired
 };
 
 export default Quiz;

@@ -22,6 +22,7 @@ class Main extends Component {
 		this.handleConfirmedSubmit = this.handleConfirmedSubmit.bind(this);
 		this.showQinfo = this.showQinfo.bind(this);
 		this.setQuestionId = this.setQuestionId.bind(this);
+		this.handleStateChange = this.handleStateChange.bind(this);
 	    this.state = {Q: ["incomplete",
 						  "incomplete",
 						  "incomplete",
@@ -31,7 +32,7 @@ class Main extends Component {
 					  finished: false,
 					  currentQuestion: -2,
 					  latestQuestion: -1,
-					  submitStatus: "none"
+					  submitStatus: "none",
 	    }
     }
 
@@ -50,32 +51,37 @@ class Main extends Component {
 			this.setState({currentQuestion: -1});
 		}
 		else if (prevState.currentTime < time0 
-				&& state.currentTime > time0){
+				&& state.currentTime > time0
+				&& this.state.Q[0] === "incomplete"){
 			this.refs.player.pause();
 			this.setState({currentQuestion: 0});
 		}
 		else if (prevState.currentTime < time1
-				&& state.currentTime > time1){
+				&& state.currentTime > time1
+				&& this.state.Q[1] === "incomplete"){
 			this.refs.player.pause();
 			this.setState({currentQuestion: 1});
 		}
 		else if (prevState.currentTime < time2
-				&& state.currentTime > time2){
+				&& state.currentTime > time2
+				&& this.state.Q[2] === "incomplete"){
 			this.refs.player.pause();
 			this.setState({currentQuestion: 2});
 		}
 		else if (prevState.currentTime < time3 
-				&& state.currentTime > time3){
+				&& state.currentTime > time3
+				&& this.state.Q[3] === "incomplete"){
 			this.refs.player.pause();
 			this.setState({currentQuestion: 3});
 		}
 		else if (prevState.currentTime < time4 
-				&& state.currentTime > time4){
+				&& state.currentTime > time4
+				&& this.state.Q[4] === "incomplete"){
 			this.refs.player.pause();
 			this.setState({currentQuestion: 4});
 		}
 		this.state.currentQuestion > this.state.latestQuestion ? this.setState({latestQuestion: this.state.currentQuestion}) : {};
-    }
+}
 
   	handleSubmit(){
 		for (var i = 0; i < 5; i++){
@@ -132,7 +138,7 @@ class Main extends Component {
 				<button id="review" className="greybtn" onClick={this.hideSubmitInfo}>Review</button>
 			</div>
 		</div>
-		)
+		);
 	}
 
 	showSuccess(){
@@ -140,7 +146,7 @@ class Main extends Component {
 			<div id="success"  className="popup">
 				<span className="close" onClick={this.hideSubmitInfo}>&times;</span>
 				<p className="greenMarker">Success</p>
-				<p >Success! You've submitted your quiz.</p>
+				<p>Success! You've submitted your quiz.</p>
 			</div>
 		)
 	}
@@ -196,7 +202,7 @@ class Main extends Component {
 			this.setState({currentQuestion: qid});
 			this.refs.player.seek(Contents[qid].time);
 		}
-	}	
+	}		
 
 	showQinfo(){
 		var qid = this.state.currentQuestion;
@@ -228,7 +234,7 @@ class Main extends Component {
 				</div>
        			<div className="chartText">
          			<p className='scorePercent'>{value}%</p>
-         			<p id="yqs">Your quiz score!</p>
+         			<p className="yqs">Your quiz score!</p>
            			<p id="scoreP" className="scoreText"> Score {value}</p>
            			<p id="scoreIn" className="scoreText"> {incorrectCount} Incorrect - </p>
            			<p id="scoreC" className="scoreText"> {correctCount} Correct / </p>
@@ -265,7 +271,7 @@ class Main extends Component {
         						<Player ref="player" src="http://www.w3schools.com/html/mov_bbb.mp4"/>
     						</td>
                 			<td>
-     							{this.state.finished ? this.showResult() : this.showQuestion()} 
+     							{this.state.finished ? this.showResult() : this.showQuestion()}
     						</td> 
     	    			</tr>
     				</tbody>
