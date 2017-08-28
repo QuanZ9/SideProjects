@@ -168,6 +168,7 @@ table td{
 }
 
 .dropdown-content a {
+    @include setFont;
     color: $greyHeavy;
     padding: 12px 30px;
     text-decoration: none;
