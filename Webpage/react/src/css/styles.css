@@ -98,6 +98,10 @@ table td {
   float: right;
 }
 
+#dropbtn {
+  float: none;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -310,13 +314,13 @@ hr {
 #chartText {
   position:absolute;
   width: 100%;
-  top: 60px;
+  top: 40px;
   z-index:1;
 }
 
 #scorePercent {
   display:inline;
-  margin-left: 50px;
+  margin-left: 30px;
   font-size: 30px;
   color: #0d6b94;
 }

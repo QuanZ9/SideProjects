@@ -41,7 +41,7 @@ DonutChart.defaultProps = {
       value:0,
       valuelabel:'Completed',
       size:116,
-      strokewidth:26
+      strokewidth:10
 };
 
 export default DonutChart;

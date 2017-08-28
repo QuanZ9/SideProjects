@@ -10,6 +10,7 @@ function Option(props) {
 				name={props.questionId}
 				value={props.optionId}
 				onClick={props.onAnswerSelected}
+				checked={props.optionId == props.checkedOption}
 			/>
 				{props.answerContent}
 			</div>

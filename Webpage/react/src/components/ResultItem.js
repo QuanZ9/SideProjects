@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import "../css/Result.css";
+import "../css/styles.css";
 
 class ResultItem extends Component{
  	constructor(props){
 		super(props);
 		this.toggleContent = this.toggleContent.bind(this);
 		this.showOptions = this.showOptions.bind(this);
+		this.showMark = this.showMark.bind(this);
 	}
 
     toggleContent(){
@@ -19,26 +21,48 @@ class ResultItem extends Component{
         }
     }
 
-	showOptions(id){
-		if (this.props.data.correctAnswer === id){
-			if (this.props.mainState.Q2){
-				return (<p> Correct!!!</p>);
-			}
+	showOptions(optionId){
+		if (this.props.data.correctAnswer === optionId){
+			return (
+				<p className="greenMarker"> ✓ {this.props.data.answers[optionId].text}</p>
+			);
 		}
 		else{
-    		return (
-				<p>{this.props.data.answers[id].text}</p>
+			if (this.props.mainState.Q[this.props.id] === optionId){
+				return (
+					<p className="redMarker"> {this.props.data.answers[optionId].text}</p>		
+				)
+			}
+			else{
+        		return (
+    				<p>{this.props.data.answers[optionId].text}</p>
+    			);
+			}
+		}
+	}
+
+	showMark(){
+		var qid = this.props.id;
+		if (this.props.mainState.A[qid]){
+			return (
+				<span className="qCI-corrent"> ✓ </span>
+			);
+		}
+		else{
+			return (
+				<span className="qCI-wrong"> x </span>
 			);
 		}
 	}
 
-
     render() {
-      	var style = { height: this.getHeight() }
+      	var style = { height: this.getHeight() };
       	return (
         	<div className="dropdown-list">
-          		<p className="dropdown-item-title" onClick={this.toggleContent} >{this.props.data.title}</p>
-          		<div className="dropdown-item-content" style={style} >
+          		<p className="dropdown-item-title" onClick={this.toggleContent}>{this.props.data.title}
+				{this.showMark()}
+				</p>
+				<div className="dropdown-item-content" style={style} >
 				<p className="dropdown-list-title">{this.props.data.question}</p>
 				<div className="dropdown-list-items">
 					{this.showOptions(0)}

@@ -11,6 +11,7 @@ function Quiz(props) {
 				answerContent={key.text}
 				optionId={key.num}
 				questionId={props.questionId}
+				checkedOption={props.checkedOption}
 				onAnswerSelected={props.onAnswerSelected}
 			/>
 		);
