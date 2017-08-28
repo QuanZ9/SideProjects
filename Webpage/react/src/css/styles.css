@@ -5,7 +5,7 @@
   position: relative;
 }
 
-#logo{
+#logo {
   margin-top: 10px;
   margin-left: 30px;
   width: 100px;
@@ -14,14 +14,14 @@
 
 #noti {
   float: right;
-  margin:20px 30px;
+  margin: 20px 30px;
   width: 14px;
   height: 18px;
 }
 
-#help{
+#help {
   float: right;
-  margin:20px -10px;
+  margin: 20px -10px;
   width: 18px;
   height: 18px;
 }
@@ -35,9 +35,9 @@
   font-family: "Roboto";
 }
 
-#content {
-  width: 80%;
-  margin: auto ;
+.content {
+  max-width: 80%;
+  margin: auto;
 }
 
 table {
@@ -45,8 +45,8 @@ table {
   width: 100%;
   font-family: "Arial";
   font-size: 12px;
-
 }
+
 table td {
   border: 1px solid;
   border-color: #c5c5c5;
@@ -63,11 +63,11 @@ table td {
   border-bottom: 0;
 }
 #description tr td:first-child,
-#description tr {
+#description tr th:first-child {
   border-left: 0;
 }
 #description tr td:last-child,
-#description tr {
+#description tr th:last-child {
   border-right: 0;
 }
 
@@ -80,43 +80,40 @@ table td {
 }
 
 .greybtn {
-  float: right;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 12px;
   text-align: center;
   cursor: pointer;
+  float: right;
   background-color: #c5c5c5;
   color: #5d5d5d;
-}
-
-
-#dropdown {
-  position: relative;
-  display: inline-block;
-  float: right;
 }
 
 #dropbtn {
   float: none;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   min-width: 180px;
   overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  left: auto;
   right: 0;
-  margin-left: -10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content a {
-  color: #c5c5c5;
+  color: #5d5d5d;
   padding: 12px 30px;
   text-decoration: none;
   display: block;
@@ -128,46 +125,27 @@ table td {
   color: #ffffff;
   left: auto;
   right: 0;
-  margin-right: -10px;
 }
 
 .show {
   display: block;
 }
 
-.chosen {
-	color: #000000;
-}
-
-.greenMarker {
-	color:#048234;
-}
-
-.redMarker {
-	color:#df0018;
-}
-
-
-#mainPart{
+.mainPart {
   margin-top: 50px;
 }
 
-#vandq td {
+.vandq td {
   width: 50%;
   padding: 0;
 }
-#vandq td:first-child {
+.vandq td:first-child {
   border: 0;
 }
-#vandq td:last-child {
+.vandq td:last-child {
   border-top: 0;
   border-left: 0;
 }
-
-#start{
-  visibility : hidden;
-  position: absolute;
-} 
 
 #start {
   background-color: #0d6b94;
@@ -175,13 +153,14 @@ table td {
   font-size: 25px;
   text-align: center;
   padding-left: 30px;
+  position: absolute;
 }
 
 .topBar {
   background-color: #f2f2f2;
   padding-left: 20px;
-  padding-top: 1px;
-  padding-bottom: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #choices {
@@ -191,13 +170,13 @@ table td {
 }
 
 .bluebtn {
-  float: right;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 12px;
   text-align: center;
   cursor: pointer;
+  float: right;
   background-color: #0d6b94;
   color: #ffffff;
 }
@@ -209,18 +188,17 @@ table td {
   margin-bottom: 20px;
 }
 
-
 .popup {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   font-family: "Arial";
   font-size: 12px;
+  background-color: #ffffff;
   height: 80px;
   padding-left: 20px;
   position: absolute;
   left: 50px;
   top: 20px;
   z-index: 10;
-  background-color:#ffffff;
 }
 
 #error {
@@ -228,7 +206,7 @@ table td {
   border-top: 4px solid #df0018;
 }
 
-#errTitle {
+.redMarker {
   color: #df0018;
 }
 
@@ -237,7 +215,7 @@ table td {
   border-top: 4px solid #048234;
 }
 
-#sucTitle {
+.greenMarker {
   color: #048234;
 }
 
@@ -245,7 +223,6 @@ table td {
   float: right;
   padding-right: 10px;
   font-size: 25px;
-  color: #c5c5c5;
 }
 .close:hover, .close:focus {
   color: #000000;
@@ -253,30 +230,21 @@ table td {
   cursor: pointer;
 }
 
-#confirmbg {
-  display: block;
-  /* Hidden by default */
+.confirmbg {
+  display: none;
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   padding-top: 100px;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
+  background-color: #000000;
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
 }
 
-#confirm {
+.confirm {
   background-color: #ffffff;
   margin: auto;
   width: 80%;
@@ -284,9 +252,9 @@ table td {
   overflow: hidden;
 }
 
-#conTitle {
+.conTitle {
   font-family: "Arial";
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .popText {
@@ -295,37 +263,32 @@ table td {
   padding-left: 20px;
 }
 
-#closeCon {
-  margin-top: 15px;
-  margin-right: 20px;
-}
-
 hr {
   width: 95%;
-  border-color: #f2f2f2;
-} 
+  color: #f2f2f2;
+}
 
-#topScore {
+.topScore {
   position: relative;
   margin-bottom: 20px;
   height: 150px;
 }
 
-#chartText {
-  position:absolute;
+.chartText {
+  position: absolute;
   width: 100%;
-  top: 40px;
-  z-index:1;
+  top: 60px;
+  z-index: 1;
 }
 
-#scorePercent {
-  display:inline;
-  margin-left: 30px;
+.scorePercent {
+  display: inline;
+  margin-left: 50px;
   font-size: 30px;
   color: #0d6b94;
 }
 
-#yqs {
+.yqs {
   margin-left: 45px;
   display: inline;
   font-size: 30px;
@@ -334,9 +297,9 @@ hr {
 
 .scoreText {
   margin-top: 10px;
-  position:relative;
-  display:inline;
-  float:right;
+  position: relative;
+  display: inline;
+  float: right;
 }
 
 .container {
@@ -345,39 +308,20 @@ hr {
 }
 
 #backToAssn {
-  float:right;
+  float: right;
 }
+
 #qLevel {
   display: inline;
 }
+
 #qCorrect {
   display: inline;
-  float:right;
+  float: right;
 }
 
-#vandr td {
+.vandr td {
+  border: none;
   width: 50%;
   padding: 0;
 }
-
-
-body {
-  font-size: 12px;
-  font-family: "Arial";
-  color: #000000;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-
-#vandr td {
-  width: 50%;
-  border: 1px solid;
-  border-color: #c5c5c5;
-  vertical-align: top;
-}
-
-
