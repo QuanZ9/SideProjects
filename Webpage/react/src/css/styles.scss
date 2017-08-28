@@ -113,7 +113,7 @@ table td{
 }
 
 //the description about the video learning test
-#description {
+.description {
   td {
   padding: 15px;
   }
@@ -206,9 +206,9 @@ table td{
   }
 }
 
-#start {
-  background-color: $logoColor;
-  color: #ffffff;
+.start {
+  background-color: #ffffff;
+  color: $logoColor;
   font-size: 25px;
   text-align: center;
   padding-left: 30px;

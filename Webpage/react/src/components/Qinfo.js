@@ -8,7 +8,6 @@ function Qinfo(props){
     }
     
     function gotoFunction(questionId) {
-    	alert("goto!!" + questionId);
     	var dropdowns = document.getElementsByClassName("dropdown-content");
 	    var i;
 		for (i = 0; i < dropdowns.length; i++) {
@@ -31,7 +30,7 @@ function Qinfo(props){
 
 	return (
 		<div>
-		<div id="dropdown">
+		<div className="dropdown">
             <button onClick={myFunction} className="greybtn" id="dropbtn">Question {props.state.currentQuestion+1} of 5 ▼</button>
             <div id="myDropdown" className="dropdown-content">
                 <a id = "q1Choose" onClick={() => gotoFunction(0)} href="#q1">1. {getText(props.state.Q[0])} </a>

@@ -4,8 +4,8 @@ import Info from "./data/info";
 class Desc extends Component {
     render() {
 	return(
-		<div id ="content">
-		<table id= "description">
+		<div className="content">
+		<table className="description">
             <tbody>
 			<tr>
                 <td><strong>Title:</strong> {Info.title}</td>

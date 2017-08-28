@@ -53,21 +53,21 @@ table td {
   vertical-align: top;
 }
 
-#description td {
+.description td {
   padding: 15px;
 }
-#description tr:first-child td {
+.description tr:first-child td {
   border-top: 0;
 }
-#description tr:last-child td {
+.description tr:last-child td {
   border-bottom: 0;
 }
-#description tr td:first-child,
-#description tr th:first-child {
+.description tr td:first-child,
+.description tr th:first-child {
   border-left: 0;
 }
-#description tr td:last-child,
-#description tr th:last-child {
+.description tr td:last-child,
+.description tr th:last-child {
   border-right: 0;
 }
 
@@ -147,13 +147,13 @@ table td {
   border-left: 0;
 }
 
-#start {
-  background-color: #0d6b94;
-  color: #ffffff;
+.start {
+  background-color: #ffffff;
+  color: #0d6b94;
   font-size: 25px;
   text-align: center;
   padding-left: 30px;
-  position: absolute;
+  position: relative;
 }
 
 .topBar {

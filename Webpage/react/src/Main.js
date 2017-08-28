@@ -22,11 +22,11 @@ class Main extends Component {
 		this.handleConfirmedSubmit = this.handleConfirmedSubmit.bind(this);
 		this.showQinfo = this.showQinfo.bind(this);
 		this.setQuestionId = this.setQuestionId.bind(this);
-	    this.state = {Q: [1,
-						  1,
-						  3,
-						  3,
-						  3],
+	    this.state = {Q: ["incomplete",
+						  "incomplete",
+						  "incomplete",
+						  "incomplete",
+						  "incomplete"],
 					  A: [false, false, false, false, false],
 					  finished: false,
 					  currentQuestion: -2,
@@ -154,8 +154,7 @@ class Main extends Component {
 		if (num < 0){
 			return (
 				<div>
-					<p>Select the play button to begin your quiz</p>
-				<input id="subQ" className="bluebtn" type="button" value="Submit Quiz" onClick={this.handleSubmit}/>
+					<p className="start">Select the play button to begin your quiz</p>
 				</div>
 			)
 		}
@@ -209,31 +208,15 @@ class Main extends Component {
 	}
 
 	showScore(){
-		var score0 = this.state.A[0] ? Contents[0].points : 0;
-		var score1 = this.state.A[1] ? Contents[1].points : 0;
-		var score2 = this.state.A[2] ? Contents[2].points : 0;
-		var score3 = this.state.A[3] ? Contents[3].points : 0;
-		var score4 = this.state.A[4] ? Contents[4].points : 0;
-		var userScore = score0 + score1 + score2 + score3 + score4;	
-		var value = ~~(100 * userScore / Info.totalPoints);
-
+		var score = 0;
 		var correctCount = 0;
-		if (this.state.A[0]){
-			correctCount = correctCount + 1;
+		for (var i = 0; i < 5; i++){
+			if (this.state.A[0]){
+				score = score + Contents[i].points;
+				correctCount = correctCount + 1;
+			}
 		}
-		if (this.state.A[1]){
-			correctCount = correctCount + 1;
-		}
-		if (this.state.A[2]){
-			correctCount = correctCount + 1;
-		}
-		if (this.state.A[3]){
-			correctCount = correctCount + 1;
-		}
-		if (this.state.A[4]){
-			correctCount = correctCount + 1;
-		}
-
+		var value = ~~(100 * score / Info.totalPoints);
 		var incorrectCount = 5 - correctCount;
 
 		return (
